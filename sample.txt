@@ -1,0 +1,9 @@
+1.how to save the file from python to push the code in github?
+2.why 2 create class/constructor?
+3.static class nd method?
+4.how to read/write in text?why need to do dt?to push in github?
+
+import mysql.connector
+mydb = mysql.connector.connect(host="localhost",user="lidia",password="12345")
+mycursor = mydb.cursor()
+mycursor.execute("show database")
