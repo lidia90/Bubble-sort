@@ -1,0 +1,80 @@
+class customer():
+    def __init__(self,price,regdis,privdis):
+        self.price = price
+        self.regdis=regdis
+        self.privdis=privdis
+    def regcus(self):
+        return (self.price-(self.price*(regdis/100)))
+    def privcus(self):
+        return (self.price-(self.price*(privdis/100)))
+
+price=int(input("Enter amt: "))
+regdis= 5
+privdis=10
+obj = customer(price,regdis,privdis)
+
+custtype = 1
+while custtype != 0:
+    print("1.priv cust")
+    print("2.reg cust")
+    custtype = int(input("Enter custtype choice(enter no only!): "))
+    if custtype == 1:
+        print("your discount amt is: ", obj.privcus())
+        break
+    elif custtype == 2:
+        print("your discount amt is: ", obj.regcus())
+        break
+    else:
+        print("Invalid custtype!!enter correct custtype plz")
+        break
+
+print()
+-------------------------------------------------------------------------
+class customer():
+    def __init__(self,price):
+        self.price = price
+        #self.regdis=regdis
+        #self.privdis=privdis
+
+class regcust(customer):
+    def __init__(self,price):
+
+        self.price= price
+    def reg(self):
+        return (self.price-(self.price*(5/100)))
+
+class privcust(customer):
+    def __init__(self,price):
+
+        self.price= price
+    def priv(self):
+        return (self.price-(self.price*(20/100)))
+
+price=int(input("Enter amt: "))
+
+custtype = 1
+while custtype != 0:
+    #print("P.priv cust")
+    #print("R.reg cust")
+    custtype = (input("are u a priv cust?(enter Y/N):"))
+    if custtype == "Y":
+        obj1=privcust(price)
+        print(obj1.priv())
+        break
+    elif custtype == "y":
+        obj1 = privcust(price)
+        print(obj1.priv())
+        break
+    elif custtype == "n":
+        obj = regcust(price)
+        print(obj.reg())
+        break
+    elif custtype == "N":
+        obj = regcust(price)
+        print(obj.reg())
+        break
+    else:
+        print("Invalid custtype!!enter correct custtype plz")
+        break
+
+print()
